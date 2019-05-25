@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
@@ -81,8 +82,9 @@ public class LoanCalcViewController implements Initializable   {
 			LoanCalculations LC= new LoanCalculations(dinterestRate,dadditionalPayment,dloanTerm,dLoanAmount);
 			
 			
+			
+			
 			double dPaymentTotal= LC.totalPayments();
-			//START HERE
 			
 			
 			System.out.println("Amount: " + dLoanAmount);	
@@ -101,6 +103,7 @@ public class LoanCalcViewController implements Initializable   {
 			 double rounded= java.lang.Math.round(dTotalinterest);
 			 
 			lblTotalInterest.setText(""+ rounded);
+			
 			
 		
 			

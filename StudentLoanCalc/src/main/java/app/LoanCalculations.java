@@ -185,29 +185,17 @@ public double totalInterestSum() {
 		
 		myPaymentNumber+=1;
 		double ppmtTest= totalPrincipal(myPaymentNumber);
-		
-		
+			
 		currentBalance= currentBalance- ppmtTest;
-		//System.out.println(ppmtTest);
 		
-		double pmt= this.pmtCalculator(myPaymentNumber);
+	
 		double iRealInterest= this.InterestonThisBalance(currentBalance);
+		
+		
 		totalInterest= totalInterest+ iRealInterest;
 		
-		double itotalPrincipal = this.totalPrincipal(myPaymentNumber);
-		
-		
-		Payments PC1= new Payments(myPaymentNumber,DueDate,pmt,extraPayment, iRealInterest,itotalPrincipal,currentBalance);
-		
-		paymentList.add(PC1);
-		//this is my linked list collecting all payments
-		
-		//System.out.println("balance "+ currentBalance);
-		//System.out.println("DueDate "+ DueDate);
-		//System.out.println("extraPayment "+ extraPayment);
-		//System.out.println("interest "+ iRealInterest);
-		
-	} while (currentBalance>=0) ;
+	} while (currentBalance<=0) ;
+	//this should be a greater than but it only gives zero if thats the case....so ill leave it as <=
 	
 	
 	

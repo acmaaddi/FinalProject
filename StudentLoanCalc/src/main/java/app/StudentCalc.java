@@ -47,8 +47,7 @@ public class StudentCalc extends Application {
 		
 	}
 	
-	private TableView<Payments> table = new TableView<Payments>();
-   
+	
   
     
 	public void ShowScreen() {
@@ -71,23 +70,72 @@ public class StudentCalc extends Application {
 	}
 
 	
-	/*
+	/*public class StudentLoanTable extends Application {
+	 * 
+	 * private TableView<Payments> table = new TableView<Payments>();
+	 private final ObservableList<Person> data =
+		        FXCollections.LinkedList(
+		            
+		            
+		            //this is where my payments list would go...but i created it in loanCalculations...
+		             * something tells me it should have bee created in another class		            
+		            
+		            
+		            )
+		        );
+		        
+		        
+		        
 	final Label label = new Label("Student Loans");
   
 	table.setEditable(true);
 
+	private TableView<Payments> table = new TableView<Payments>();
+	 private final LinkedList<Person> data =
+		        FXCollections.LinkedList(
+		         
+		         
+		         //this is where my data would have gone from paymentList 
+		        );
     
 
     TableColumn paymentIDCol = new TableColumn("Payment#");
     paymentIDCol.setMinWidth(100);
     paymentIDCol.setCellValueFactory(
-            new PropertyValueFactory<Payments, String>("firstName"));
+            new PropertyValueFactory<Payments, String>("Payment#"));
+	
+    TableColumn paymentIDCol = new TableColumn("Due Date");
+    paymentIDCol.setMinWidth(100);
+    paymentIDCol.setCellValueFactory(
+            new PropertyValueFactory<Payments, String>("Due Date"));
 
+        TableColumn paymentIDCol = new TableColumn("Payment");
+    paymentIDCol.setMinWidth(100);
+    paymentIDCol.setCellValueFactory(
+            new PropertyValueFactory<Payments, String>("Payment"));
+	
+    TableColumn paymentIDCol = new TableColumn("Interest");
+    paymentIDCol.setMinWidth(100);
+    paymentIDCol.setCellValueFactory(
+            new PropertyValueFactory<Payments, String>("Due Date"));
+
+        TableColumn paymentIDCol = new TableColumn("Principal");
+    paymentIDCol.setMinWidth(100);
+    paymentIDCol.setCellValueFactory(
+            new PropertyValueFactory<Payments, String>("Principal"));
+	
+    TableColumn paymentIDCol = new TableColumn("Balance");
+    paymentIDCol.setMinWidth(100);
+    paymentIDCol.setCellValueFactory(
+            new PropertyValueFactory<Payments, String>("Balance"));
+
+    
+    
     
     
 
     table.setItems(paymentList);
-    table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+    table.getColumns().addAll(paymentIDCol, lastNameCol, emailCol);
 
     final VBox vbox = new VBox();
     vbox.setSpacing(5);

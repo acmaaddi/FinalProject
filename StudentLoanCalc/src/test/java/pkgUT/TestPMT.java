@@ -65,12 +65,37 @@ public class TestPMT {
 
 	
 	double paymentsExpected =1400;
+	//number generated from excel
 	
 	
 	//why is this such a big and wrong number
 	assertEquals(totalnum, paymentsExpected, 0.01);
 	}
 	
+
+	
+	
+	@Test
+	public void testInterest() {
+
+	double dinterestRate = 0.07 / 12;
+	int dloanTerm = 20 * 12;
+	double dLoanAmount = 5000;
+	double f = 0;
+	boolean t = false;
+	double dadditionalPayment =0;
+	LoanCalculations LC= new LoanCalculations(dinterestRate,dadditionalPayment,dloanTerm,dLoanAmount);
+	
+	double totalnum= LC.totalInterestSum();
+
+	
+	double interestExpected =74.57;
+	//number generated from excel
+	
+	
+	//why is this such a big and wrong number
+	assertEquals(totalnum, interestExpected, 0.01);
+	}
 	
 }
 
